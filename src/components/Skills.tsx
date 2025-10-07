@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Palette, Database, Smartphone, Cpu, Layers } from "lucide-react";
+import { Code2, Palette, Database, Cpu, FileCode } from "lucide-react";
 
 const skills = [
   { name: "React", icon: Code2 },
   { name: "TailwindCSS", icon: Palette },
   { name: "Node.js", icon: Database },
   { name: "JavaScript", icon: Cpu },
-  { name: "Python", icon: Layers },
-  { name: "UI/UX Design", icon: Smartphone },
+  { name: "Visual Studio Code", icon: FileCode },
 ];
 
 const Skills = () => {

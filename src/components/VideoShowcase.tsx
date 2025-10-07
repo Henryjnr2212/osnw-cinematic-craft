@@ -31,7 +31,7 @@ const VideoShowcase = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div>
-                <h3 className="text-2xl font-semibold mb-3">Call Noir</h3>
+                <h3 className="text-2xl font-semibold mb-3">AI Therapist</h3>
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 text-xs font-medium bg-secondary rounded-full">AI-Powered</span>
                   <span className="px-3 py-1 text-xs font-medium bg-secondary rounded-full">Voice Tech</span>

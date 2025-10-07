@@ -1,38 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send } from "lucide-react";
-import { toast } from "sonner";
+import { useRef } from "react";
+import { Mail, Phone } from "lucide-react";
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create mailto link with form data
-    const mailtoLink = `mailto:henryquainoo2212@gmail.com?subject=Message from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}%0D%0A%0D%0AFrom: ${encodeURIComponent(formData.email)}`;
-    
-    window.location.href = mailtoLink;
-    
-    toast.success("Opening your email client...");
-    
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   return (
     <section id="contact" className="py-32 gradient-card">
@@ -51,67 +24,40 @@ const Contact = () => {
             </p>
           </div>
 
-          <motion.form
-            onSubmit={handleSubmit}
-            className="space-y-6"
+          <motion.div
+            className="space-y-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div>
-              <Input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="bg-card border-border focus:border-foreground transition-smooth"
-              />
-            </div>
-
-            <div>
-              <Input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="bg-card border-border focus:border-foreground transition-smooth"
-              />
-            </div>
-
-            <div>
-              <Textarea
-                name="message"
-                placeholder="Your Message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={6}
-                className="bg-card border-border focus:border-foreground transition-smooth resize-none"
-              />
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button type="submit" variant="hero" size="lg" className="flex-1">
-                <Send className="mr-2 h-5 w-5" />
-                Send Message
-              </Button>
-              
-              <Button 
-                type="button"
-                variant="outline" 
-                size="lg"
-                className="flex-1"
-                onClick={() => window.location.href = "mailto:henryquainoo2212@gmail.com"}
+            <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+              <a 
+                href="mailto:henryquainoo2212@gmail.com"
+                className="group flex items-center gap-4 gradient-card p-6 rounded-lg border border-border hover:border-foreground/20 transition-smooth shadow-elegant hover:shadow-glow"
               >
-                <Mail className="mr-2 h-5 w-5" />
-                Direct Email
-              </Button>
+                <div className="p-3 rounded-full bg-secondary">
+                  <Mail className="h-6 w-6 text-foreground" />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm text-muted-foreground mb-1">Email</p>
+                  <p className="font-semibold group-hover:text-foreground transition-smooth">henryquainoo2212@gmail.com</p>
+                </div>
+              </a>
+
+              <a 
+                href="tel:+233556626526"
+                className="group flex items-center gap-4 gradient-card p-6 rounded-lg border border-border hover:border-foreground/20 transition-smooth shadow-elegant hover:shadow-glow"
+              >
+                <div className="p-3 rounded-full bg-secondary">
+                  <Phone className="h-6 w-6 text-foreground" />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm text-muted-foreground mb-1">Phone</p>
+                  <p className="font-semibold group-hover:text-foreground transition-smooth">+233 55 662 6526</p>
+                </div>
+              </a>
             </div>
-          </motion.form>
+          </motion.div>
         </motion.div>
       </div>
     </section>
