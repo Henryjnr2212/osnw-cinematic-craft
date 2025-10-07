@@ -35,29 +35,14 @@ const OsnwClothing = () => {
           </div>
 
           <div className="relative rounded-xl overflow-hidden shadow-elegant aspect-video bg-card border border-border mb-12">
-            {/* Video placeholder - replace with actual embed */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="w-20 h-20 mx-auto rounded-full bg-secondary/50 flex items-center justify-center">
-                  <div className="w-0 h-0 border-l-[16px] border-l-foreground border-y-[10px] border-y-transparent ml-1" />
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  OSNW Clothing showcase video
-                </p>
-                <p className="text-xs text-muted-foreground/60">
-                  Replace with YouTube embed or MP4
-                </p>
-              </div>
-            </div>
-            
-            {/* Uncomment and add your video URL */}
-            {/* <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-              title="OSNW Clothing Showcase"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            /> */}
+            <video 
+              className="w-full h-full object-cover"
+              controls
+              preload="metadata"
+            >
+              <source src="/videos/osnw-website.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
 
           <div className="prose prose-invert max-w-none">

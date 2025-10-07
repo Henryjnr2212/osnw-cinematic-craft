@@ -52,7 +52,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-foreground" />
                 </div>
                 <div className="text-left">
-                  <p className="text-sm text-muted-foreground mb-1">Phone</p>
+                  <p className="text-sm text-muted-foreground mb-1">Phone / WhatsApp</p>
                   <p className="font-semibold group-hover:text-foreground transition-smooth">+233 55 662 6526</p>
                 </div>
               </a>
