@@ -39,6 +39,7 @@ const OsnwClothing = () => {
               className="w-full h-full object-cover"
               controls
               preload="metadata"
+              poster=""
             >
               <source src="/videos/osnw-website.mp4" type="video/mp4" />
               Your browser does not support the video tag.

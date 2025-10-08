@@ -39,6 +39,7 @@ const AiTherapist = () => {
               className="w-full h-full object-cover"
               controls
               preload="metadata"
+              poster=""
             >
               <source src="/videos/ai-therapist.mp4" type="video/mp4" />
               Your browser does not support the video tag.
